@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+    <h2 id="header">HTML Forms and JS</h2>
+    <!-- Your line below Nikos is wrong, you need to Prevent a Form from Clearing Fields on Submit -->
+    <!-- <form action="#" id="form1" > -->
+    <!-- The line below is the correct -->
+    <form action="#" id="form1" onsubmit="return false">
+        <div class="center">
+            <label for="fname">First name</label><br>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="lname">Last name</label><br>
+            <input type="text" id="lname" name="lname" required><br>
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address" required><br>
+            <label for="addr">Address Number</label><br>
+            <input type="number" id="addr" name="addr" required><br>
+        </div>
+        <br><br>
+        <div class="center">
+            <label for="country">Country</label><br>
+            <input type="text" id="country" name="country"><br>
+            <label for="tel">Telephone Number</label><br>
+            <input type="text" id="tel" name="tel" placeholder="e.g. 2101111111"><br>
+            <label for="web">Website</label><br>
+            <input type="text" id="web" name="web" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <br><br>
+        <!-- Nikos canvas element should be inside its own div section, it's better this way -->
+        <div class="text">
+            <p>Personalize your page, choose a colour</p>
+            <!-- Below is your line of code, it's redundant-->
+            <!-- <input type="color" id="color" name="color" onclick="func2()"><br><br> -->
+            <input type="color" id="color" onclick="func2()"><br><br>
+        </div>
+        <div class="text">
+            <p>Please rate your satisfaction from our services (Scale 1-10)</p>
+            <input type="range" id="rang" name="rang" min=1 max=10><br><br>
+            <button onclick="func1()">Submit</button><br><br>          
+        </div>
+        <div class="text">
+            <input id="in" name="in" >
+            <button onclick="func3()">Show Figure</button>
+            <p>Press <a href="index.html" id="link">Refresh</a> to run the application again.</p>
+            <p id="par1"></p>
+        </div>
+    </form>
+</body>
+</html>
