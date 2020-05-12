@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleCat.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="myScript.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <meta name="keywords" content="footer, address, phone, icons" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="photos/logo.jpg" sizes="16x16">
+    <style>
+        /* unvisited link */
+        a:link {
+          color: blueviolet;
+        }
+
+
+        /* mouse over link */
+        a:hover {
+          color: blue;
+        }
+
+        /* added 11-05-2020 ----- */
+        * {box-sizing: border-box}
+
+        .container {
+        position: relative;
+        width: 50%;
+        max-width: 300px;
+        }
+
+        .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        }
+
+        .overlay {
+        position: absolute;
+        top: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); 
+        color: #f1f1f1;
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+        }
+
+        .container:hover .overlay {
+        opacity: 1;
+        }
+        /* added 11-05-2020 ----- */
+
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Go Top</button>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <a href="./firstPage.html">
+            <img src="./photos/webDev.png" />
+        </a>
+        <ul>
+            <li><a href="./firstPage.html">Home</a></li>
+            <li><a href="./secondPage.html">Sign up</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="./fourPage.html">Order</a></li>
+            <li><a href="./fivePage.html">Contact us</a></li>
+        </ul>
+    </nav>
+    <br />
+    <hr />
+    <div class="section-header">
+        <h2>Different Categories</h2>
+    </div>
+
+    <div class="responsive">
+        <!-- added 11-05-2020 -->
+        <div class="container">
+            <div id="text"></div>
+            <a onClick="parent.open('./fourPageC1.html')"> <img id="img1" src="./photos/checking1.jpg" onMouseOver="showText('')" onMouseOut="hide();" /> </a>
+            <!-- added 11-05-2020 -->
+            <div class="overlay">Prices from 170$ to 270$</div>
+            <div class="des"> <a href="./fourPageC1.html" target="_blank" style="color:blueviolet"> Laptop </a></div>     
+        </div>
+    </div>
+
+    <div class="responsive">
+        <!-- added 11-05-2020 -->
+        <div class="container">
+            <a onClick="parent.open('./fourPageC2.html')"><img src="./photos/checking2.jpg" /></a>
+            <!-- added 11-05-2020 -->
+            <div class="overlay">Prices from 1000$ to 2000$</div>
+            <div class="des"><a href="./fourPageC2.html" target="_blank">Desktop</a></div>
+        </div>
+    </div>
+
+    <div class="responsive">
+        <!-- added 11-05-2020 -->
+        <div class="container">
+            <a onClick="parent.open('./fourPageC3.html')"><img src="./photos/checking3.jpg" /></a>
+            <!-- added 11-05-2020 -->
+            <div class="overlay">Prices from 40$ to 90$</div>
+            <div class="des"><a href="./fourPageC3.html" target="_blank">Headphones</a></div>
+        </div>
+    </div>
+    <br /><br />
+    <!--The content of your page would go here.-->
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="photos/webDev.png">
+            <h3>web<span>Dev</span></h3>
+
+            <p class="footer-links">
+                <a href="./firstPage.html">Home</a>
+                |
+                <a href="./secondPage.html">Sign Up</a>
+                |
+                <a href="./threePage.html">Products</a>
+                |
+                <a href="#">ContactUs</a>
+            </p>
+
+            <p class="footer-company-name">2020 &copy; NZDev. All rights reserverd</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>
+                        Acadimias 1
+                    </span>
+                    Athens, Greece
+                </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+69 000 0000 or </p>
+                <p> +210 000 0000</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@webdev.com">support@webdev.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        Copyright &copy; Store 2020. All rights reserved.
+    </div>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="myScript.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <meta name="keywords" content="footer, address, phone, icons" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="photos/logo.jpg" sizes="16x16">
+    <!--stylesheet with element style-->
+    <style>
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=date], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 50%;
+            background-color: #3399ff;
+            color: white;
+            padding: 2% 5%;
+            margin-left: 25%;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+
+        div.form1 {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .clearfix {
+            overflow: auto;
+            display: block;
+            padding: 20px 50px 0px 10px;
+            background: #fff;
+            font: inherit;
+            text-align: center;
+            font-family: calibri;
+            margin: 30px;
+            border: 3px solid #4CAF50;
+            padding: 2%;
+        }
+
+        .img2 {
+            float: left;
+            padding-left: 50px;
+        }
+
+
+        .near {
+            float: right;
+            font-weight: bold;
+        }
+
+        .price {
+            background-color: orange;
+            width: 15%;
+            border: 2px solid;
+            padding: 1%;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .form2 {
+            width: 50%;
+            margin-left: 23%;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5% 18%;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+
+        /* Dropdown Button */
+        .dropbtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover, .dropbtn:focus {
+        background-color: #2980B9;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #ddd}
+
+        /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+        .show {display:block;} 
+
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Go Top</button>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <a href="./firstPage.html">
+            <img src="./photos/webDev.png" />
+        </a>
+        <ul>
+            <li><a href="./firstPage.html">Home</a></li>
+            <li><a href="./secondPage.html">Sign up</a></li>
+            <li><a href="./threePage.html">Products</a></li>
+            <li><a href="./fourPage.html">Order</a></li>
+            <li><a href="./fivePage.html">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <div class="form1" id="f1">
+        <form method="post" action="#">
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona1.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>
+                    JBL Tune 500BT Black
+                    4
+                    JBL Tune 500BT Black
+                </h2>
+                <p>Bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne1" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br><br />
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity1" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 40 $</p>
+            </div>
+
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona2.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>Sony WH-1000XM3 Black</h2>
+                <p>3.5mm / Bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne2" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br><br />
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity2" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 50 $</p>
+            </div>
+
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona3.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>System WH-CH510 Blue and Brown</h2>
+                <p>bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne3" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br><br />
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity3" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 60 $</p>
+            </div>
+
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona4.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>Sony WH-CH510 Black</h2>
+                <p>Bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne4" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br><br />
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity4" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 70 $</p>
+            </div>
+
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona5.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>JBL Tune 500BT White</h2>
+                <p>Bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne5" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br>
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity5" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 80 $</p>
+            </div>
+
+            <div class="clearfix">
+                <img class="img2" src="photos/category3/eikona6.jpeg" alt="Pineapple" width="170" height="170">
+                <h2>Edifier W855BT Black</h2>
+                <p>3.5mm / Bluetooth, microphone</p><br />
+
+                <input type="checkbox" id="checkOne6" name="checkone" value="check">
+                <label for="checkOne"> Added</label><br><br />
+                <div style="padding-left:10%;padding-bottom:5%">
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity6" name="quantity" min="1" max="5">
+                </div>
+                <p class="near price">Price: 90 $</p>
+            </div>
+        </form>
+        <input type="submit" value="Submit" onclick="myFunction()">
+        <br /><br />
+        <input id="f2" type="submit" value="Επόμενο" onclick="scrollToElement()">
+    </div>
+
+    <fieldset class="form2" id="f2">
+        <legend>
+            completion of purchase shipping items
+        </legend>
+        <div>
+            <form  method="post" action="#">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+                <label for="street">Street</label>
+                <input type="text" id="street" name="street" placeholder="Your street.." onkeyup="lettersOnly(this)" required>
+
+                <label for="numberStr">Number Of Street</label>
+                <input type="text" id="numberStr" name="numberStr" placeholder="Your street number.."  onkeyup="NumbersOnly(this)" required>
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Your city.." onkeyup="lettersOnly(this)" required>
+
+                <!-- ##### added 11-05-2020 ##### --> 
+                <script language="javascript">
+                    function checkInput(ob) {
+                    var invalidChars = /[^0-9]/gi
+                    if(invalidChars.test(ob.value)) {
+                                ob.value = ob.value.replace(invalidChars,"");
+                        }
+                    }
+                </script>
+
+                <label for="zipcode">Zip code</label>
+                 <!-- ##### added 11-05-2020 ##### --> 
+                <input type="text" id="zipcode" name="zipcode" placeholder="Zip code area.." onkeyup="checkInput(this)" pattern=".{5,5}" maxlength="5" required> 
+                <br>
+
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email e.g address@host.com" required>
+
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">None</option>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <input type="checkbox" id="verify" name="verify" value="check" required>
+                <label for="verify">
+                    I accept the terms of use
+                </label><br>
+
+            </form>
+            <input type="submit" value="Submit" onclick="myFunc()">
+            <br /><br />
+        </div>
+    </fieldset>
+    <button class="button" onclick="scrollToElement1()">Προηγούμενο</button>
+    <button class="button" onclick="scrollToElement3()">Επόμενο</button>
+    <br><br>
+
+    <fieldset class="form2" id="f3">
+        
+
+        <script>
+            function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+            }
+            
+            window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+                }
+            }
+            } 
+        </script>
+
+
+        <legend>Completion of purchase payment details</legend>
+
+          <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+            <script type="text/javascript">
+                $(function () {
+                    $("#myDropdown").change(function () {
+                        if ($(this).val() == 1) {
+                            $("#cardtype").removeAttr("disabled");
+                            $("#cardtype").focus();
+                            $("#cardcode").removeAttr("disabled");
+                            $("#cardcode").focus();
+                            $("#cardfullname").removeAttr("disabled");
+                            $("#cardfullname").focus();
+                            $("#cardexpireday").removeAttr("disabled");
+                            $("#cardexpireday").focus();
+                        } else {
+                            $("#cardtype").attr("disabled", "disabled");
+                            $("#cardcode").attr("disabled", "disabled");
+                            $("#cardfullname").attr("disabled", "disabled");
+                            $("#cardexpireday").attr("disabled", "disabled");
+                        }
+                    });
+                });
+            </script>
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Choose Payment Option</button>
+            <select id="myDropdown" class="dropdown-content"> <!-- select-->
+                <option value = "1" >Card</option>
+                <option value = "2" >Pay on Delivery</option>
+            </select>
+        </div>
+        
+        
+        <div>
+            <form id="fPay" name="fPay" method="post" action="./firstPage.html">
+                <label for="code">Request code</label>
+                <input type="text" id="code" name="code" placeholder="Your code of order.." required>
+
+                <label for="dateorder">Date of order</label>
+                <input type="date" id="dateorder" name="dateorder" required>
+
+                <label for="customer">Customer</label>
+                <input type="text" id="customer" name="customer" placeholder="Your first and last name.." required>
+
+                <label for="pay">Payment amount</label>
+                <input type="text" id="pay" name="pay" placeholder="Your amount..." required>
+
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone" placeholder="Your phone number.." required>
+
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="">None</option>
+                    <option value="australia">Australia</option>
+                    <option value="canada">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+
+                <label for="cardtype">Card Type</label>
+                 <select id="cardtype" disabled="disabled" required>  <!-- disabled="disabled" -->
+                    <option value="VISA">VISA</option>
+                    <option value="MASTERCARD">MASTERCARD</option>
+                </select>
+
+                <label for="cardcode">16 Digit Card Number</label>
+                <input type="number" id="cardcode" name="cardcode" style="width: 28em" placeholder="Your code of order.." disabled="disabled" required><br>
+
+                <label for="cardfullname">Full Name on Card</label>
+                <input type="text" id="cardfullname" name="cardfullname" placeholder="" disabled="disabled" required>
+
+               <label for="cardexpireday">Card Expire Day</label>
+                <input type="date" id="cardexpireday" name="cardexpireday" disabled="disabled" required>
+
+                <input type="checkbox" id="verify" name="verify" value="check" required>
+                <label for="verify">I accept the terms of use</label><br>
+            </form>
+            <input type="submit" value="Submit">
+            <br /><br />
+        </div>
+    </fieldset>
+    <button class="button" onclick="scrollToElement()">Προηγούμενο</button>
+    <button class="button" onclick="call()">Επιβεβαίωση</button>
+    <!-- The content of your page would go here. -->
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="photos/webDev.png">
+            <h3>web<span>Dev</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="#">Sign Up</a>
+                |
+                <a href="#">About</a>
+                |
+                <a href="#">Order</a>
+            </p>
+
+            <p class="footer-company-name">2020 &copy; NZDev. All rights reserverd</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>
+                        Acadimias 1
+                    </span>
+                    Athens, Greece
+                </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+69 000 0000 or </p>
+                <p> +210 000 0000</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@webdev.com">support@webdev.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        Copyright &copy; Store 2020. All rights reserved.
+    </div>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+.container{
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    width: 70%;
+    height: 0;
+    padding-bottom:40%;
+    background: #4c4c4c;
+    border: solid 10px #2c2c2c;
+}
+
+.slide_img{
+    position:absolute;
+    width: 100%;
+    height:100%;
+}
+
+.slide_img img {
+    width: 100%;
+    height: 100%;
+}
+
+#i1, #i2, #i3{
+    display:none;
+}
+
+.pre, .nxt{
+    width:12%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    background: rgba(88,88,88,.4);
+    z-index: 99;
+    cursor: pointer;
+}
+
+.pre{
+    left:0;
+}
+
+.nxt{
+    right:0;
+}
+
+.nav{
+    width: 100%;
+    height:11px;
+    bottom: 12%;
+    position: absolute;
+    text-align: center;
+    z-index: 99;
+}
+
+.dots{
+    top: -5px;
+    width: 18px;
+    height: 18px;
+    margin: 0 4px;
+    position: relative;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(0,0,0,.6);
+}
+
+.slide_img{
+    z-index: -1;
+}
+
+#i1:checked ~ #one,
+#i2:checked ~ #two,
+#i3:checked ~ #three{
+    z-index: 9;
+}
+
+#i1:checked ~ .nav #dot1,
+#i2:checked ~ .nav #dot2,
+#i3:checked ~ .nav #dot3{
+    background: #fff;
+}
+
+div.polaroid {
+    width: 40%;
+    background-color: Cornsilk;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 3%;
+    float: right;
+    padding: 20px;
+}
+
+div.cont {
+    text-align: center;
+    padding: 10px 20px;
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Pacificco&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-font: 'Pacifico', cursive;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+header {
+    height: 100vh;
+    width: 100%;
+    background-color: #99ccff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    user-select: none;
+}
+
+.main-header{
+    text-align: center;
+    transition: 0.5s;
+}
+
+.main-header:hover {
+      -webkit-box-shadow: 0px 11px 54px 0px rgba(0,0,0,0.75);
+      -moz-box-shadow: 0px 11px 54px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 11px 54px 0px rgba(0,0,0,0.75);
+}
+
+.main-header h1{
+    font-size:3rem;
+    font-family:var(--main-font);
+    color: slateblue;
+    margin: 20px;
+}
+
+.main-header hr{
+    width: 50%;
+    margin: auto;
+    padding: 5px;
+    background: blue;
+    border: none;
+}
+
+.main-header h3 {
+      margin: 20px;
+      color: slateblue;
+      font-size: 1.5rem;
+}
+
+.main-header input {
+        width: 90%;
+        padding: 1rem;
+        margin: 20px 0px;
+        border: none;
+        border-bottom: 2px solid slateblue;
+        font-size: 2rem;
+        background:transparent;
+        outline: none;
+}
+
+.main-header button {
+        padding: 1rem 3rem;
+        font-size: 1.2rem;
+        background: #ccccff;
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.5s;
+        margin: 20px;
+}
+
+.main-header button:hover{
+    transform: scale(1.5);
+}

@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WebDev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enallagiPhotos.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <meta name="keywords" content="footer, address, phone, icons" />
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+    <link rel="icon" href="photos/logo.jpg" sizes="16x16">
+
+    <style>
+        .boxes{
+            width: 75%;
+            padding:10px;
+            background: #ddd;
+            margin:100px auto;
+            display:flex;
+            justify-content: center;
+        }
+
+        .box{
+            width: 250px;
+            height: 300px;
+            background: #99ccff;
+            margin: 0px 10px;
+            transition: 1s;
+        }
+
+        .box img{
+            width: 250px;
+            height: 300px;
+            background: #99ccff;
+            margin: 0px 10px;
+            transition: 1s;
+        }
+
+        .box:hover{
+            transform:scale(1.3);
+            background: #3399ff;
+            box-shadow: 2px 2px 2px #000;
+            z-index: 2;
+        }
+        
+        .headBox{
+            width:100%;
+            height:auto;
+            background:#99ccff;
+
+            /*add flexbox style*/
+            display:flex;
+            flex-direction:row;
+            justify-content:space-around;
+            flex-flow: wrap;
+        }
+
+        .hbox{
+            width: 20%;
+            height: 300px;
+            background:#3399ff;
+            margin: 20px;
+            box-sizing: border-box;
+            font-size: 50px;
+        }
+
+        .hbox h3{
+            padding: 5%;
+            font-size: xx-large;
+        }
+
+        .hbox h2{
+            padding: 5%;
+            font-size: x-large;
+        }
+
+        /*add media queries*/
+        @media screen and (max-width:1200px){
+            .hbox{
+                width:40%;
+            }
+        }
+
+        @media screen and (max-width:600px){
+            .hbox{
+                width:90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Go Top</button>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check">
+            <i class="fas fa-bars" id="btn"></i>
+            <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <a href="#">
+            <img src="./photos/webDev.png" />
+        </a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="./secondPage.html">Sign up</a></li>
+            <li><a href="./threePage.html">Products</a></li>
+            <li><a href="./fourPage.html">Order</a></li>
+            <li><a href="./fivePage.html">Contact us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <input type="radio" name="images" id="i1" checked />
+        <input type="radio" name="images" id="i2" />
+        <input type="radio" name="images" id="i3" />
+
+        <div class="slide_img" id="one">
+            <img src="./photos/enallagi_1.jpg">
+
+            <label for="i3" class="pre"></label>
+            <label for="i2" class="nxt"></label>
+        </div>
+
+        <div class="slide_img" id="two">
+            <img src="./photos/enallagi_2.jpg">
+
+            <label for="i1" class="pre"></label>
+            <label for="i3" class="nxt"></label>
+        </div>
+
+        <div class="slide_img" id="three">
+            <img src="./photos/enallagi_3.jpeg">
+
+            <label for="i2" class="pre"></label>
+            <label for="i1" class="nxt"></label>
+        </div>
+
+        <div class="nav">
+            <label class="dots" id="dot1" for="i1"></label>
+            <label class="dots" id="dot2" for="i2"></label>
+            <label class="dots" id="dot3" for="i3"></label>
+        </div>
+    </div>
+
+    <br><br><br>
+    <div class="headBox">
+        <div class="hbox">
+            <h3>Καλώς ήρθατε στο ηλεκτρονικό μας κατάστημα</h3>
+            <h2>Εδώ θα βρείτε χιλιάδες προιόντα που επιθυμείτε να έχετε</h2>
+        </div>
+        <div class="hbox">
+            <p style="text-align:center;padding-top:20%">Για Log in πατήστε <a href="login.html" target="_blank">εδώ</a></p>
+        </div>
+        <div class="hbox">
+            <p style="text-align:center;padding-top:30%;">Αν επιθυμείτε SignUp κάντε από <a href="secondPage.html" target="_blank">εδώ</a></p>
+        </div>
+        <div class="hbox">
+            <p style="text-align:center;padding-top:15%;">Surprise για τα new members</p>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="boxes">
+        <div class="box">
+            <img src="./photos/checking1.jpg" />
+        </div>
+        <div class="box">
+            <img src="./photos/checking2.jpg" />
+        </div>
+        <div class="box">
+            <img src="./photos/checking3.jpg" />
+        </div>
+        <div class="box">
+            <img src="./photos/category1/eikona1.jpeg" />
+        </div>
+    </div>
+
+    <h1 style="text-align:center">Σας ευχαριστούμε θερμά!!!</h1>
+
+
+
+    <!--The content of your page would go here.-->
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="photos/webDev.png">
+            <h3>web<span>Dev</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                |
+                <a href="./secondPage.html">Sign Up</a>
+                |
+                <a href="./threePage.html">Products</a>
+                |
+                <a href="./fivePage.html">ContactUs</a>
+            </p>
+
+            <p class="footer-company-name">2020 &copy; NZDev. All rights reserverd</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p>
+                    <span>
+                        Acadimias 1
+                    </span>
+                    Athens, Greece
+                </p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+69 000 0000 or </p>
+                <p> +210 000 0000</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@webdev.com">support@webdev.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                We offer training and skill building courses across Technology, Design, Management, Science and Humanities.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        Copyright &copy; Store 2020. All rights reserved.
+    </div>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+</html>
