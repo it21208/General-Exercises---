@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title> Jewellery for you </title>
+	<link rel="stylesheet" type="text/css" href="mainpage.css">
+	
+	<script type="text/javascript">
+	function showDate() {
+		var d = new Date();
+		var curr_date = d.getDate();
+		var curr_month = d.getMonth() + 1; //months are zero based
+		var curr_year = d.getFullYear();
+		document.write(curr_date + "-" + curr_month + "-" + curr_year);
+	}
+	</script>
+</head>
+
+<body>
+	<header id="header1">
+		<p> Jewellery for you </p>
+	</header>
+	<p id="welcome" style="text-align:center" >  <b> Welcome! </b><br></p>
+	<p style="color:white; text-align:center;" class="general" >"Jewellery for you" is an online store, <br> where you can find the ideal and perfect bijou for you <br> and for the people that you love.<br>
+	Sign up today!
+	</p>
+	<br>
+	<div style="width:180px; margin:auto;">
+		<script type="text/javascript">showDate();</script>
+	</div><br>
+	<br>
+	<a href="signup_page.html"> Signup </a><br>
+	<p class="general" style="text-align:left"> If you already have an account log in! </p><br>
+	
+	<div>
+		<form>
+			<p><label for="username"> Username </label><input type="text"  name="username" required>
+			<p><label for="pwd"> Password </label><input type="password" name="pwd" required>			
+		</form>
+	</div>
+	<a href="categories_page.html"> Login </a>
+</body>
+
+</html>

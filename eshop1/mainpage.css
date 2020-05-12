@@ -1,0 +1,79 @@
+body {
+	background-image: url("./photos/new.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-color: black;
+}
+
+#header1 {
+	font-family: calibri;
+	font-style: oblique;
+	font-size: 32px;
+	color: #d6d6f5;
+	text-shadow: 1px 2px grey;
+	position: relative;
+	left: 880px;
+	text-decoration: underline;
+}
+
+a:link, a:visited {
+  background-color: #1a1a1a;
+  border: groove;
+  color: #d6d6f5;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  position: relative;
+  left: 920px;
+  cursor: pointer;
+  font-family: calibri;
+  font-style: oblique;
+  width: 80px;
+}
+
+a:hover, a:active {
+  background-color: #4d4d4d;
+}
+
+#welcome {
+	color: white;
+	text-align: center;
+	font-family: calibri;
+	font-style: oblique;
+	position: relative;
+	left: 650px;
+	font-size: 22px;
+}
+
+.general {
+	color: white;
+	text-align: center;
+	font-family: calibri;
+	font-style: oblique;
+	position: relative;
+	left: 650px;
+	font-size: 19px;
+}
+
+div {
+	background-color: #1a1a1a;
+	border: groove;
+	color: #d6d6f5;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 15px;
+	position: relative;
+	left: 900px;
+	cursor: pointer;
+	font-family: calibri;
+	font-style: oblique;
+	width: 140px;
+}
+
+

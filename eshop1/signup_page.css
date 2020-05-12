@@ -1,0 +1,63 @@
+body {
+	background-color: #1a1a1a;
+	font-family: calibri;
+	font-style: oblique;
+	color: white;
+}
+
+div {
+  border-radius: 10px;
+  background-color: grey;
+  padding: 10px;
+  margin: 0px 75px 0px 75px;
+}
+
+input[type=text], select {
+  width: 15%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 15%;
+  padding: 10px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+a:link, a:visited {
+  width: 20%;
+  background-color: black;
+  color: #b3b3b3;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: calibri;
+  font-style: oblique;
+  font-size: 15px;
+  position: relative;
+  left: 50px;
+}
+
+a:hover, a:active {
+  background-color: #262626;
+}
+
+p {
+	position: relative;
+	left: 50px;
+}
+
+#watch {
+	position: relative;
+	right: 60px;
+}
