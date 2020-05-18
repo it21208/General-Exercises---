@@ -158,7 +158,26 @@
         .dropdown-content a:hover {background-color: #ddd}
 
         /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-        .show {display:block;} 
+        .show {display:block;}
+
+        .shopping-cart1 {
+        background: #99ccff;
+        background-image: -webkit-linear-gradient(to bottom, #FFF7C0, #99ccff);
+        background-image: -moz-linear-gradient(to bottom, #FFF7C0, #99ccff);
+        background-image: -ms-linear-gradient(to bottom, #FFF7C0, #99ccff);
+        background-image: linear-gradient(to bottom, #FFF7C0, #99ccff);
+        position: sticky; top: 10px;
+        height: 160px;
+        width: 30%;
+        opacity: 0.85;
+        }
+
+        .shopping-cartdiv{
+            text-align: center;
+            float:left;
+            margin-right:15px;
+            margin-left: 15px;
+        }
     </style>
 </head>
 
@@ -180,16 +199,143 @@
             <li><a href="./fourPage.html">Order</a></li>
             <li><a href="./fivePage.html">Contact us</a></li>
         </ul>
-    </nav>
+    </nav>  
 
+    <script type="text/javascript" language="javascript">
+
+        function getRandom(arr, n) {
+            var result = new Array(n),
+                len = arr.length,
+                taken = new Array(len);
+            if (n > len)
+                throw new RangeError("getRandom: more elements taken than available");
+            while (n--) {
+                var x = Math.floor(Math.random() * len);
+                result[n] = arr[x in taken ? taken[x] : x];
+                taken[x] = --len in taken ? taken[len] : len;
+            }
+            return result;
+        }
+
+        function updateWithRandom() {
+        // θα υπάρχει ένα button το οποίο εφόσον επιλεγεί από τον χρήστη, θα επιλέγονται αυτόματα τυχαία προϊόντα με τις αντίστοιχες τυχαίες ποσότητες
+        // προς αγορά. Ανάλογα με τις επιλογές που θα γίνονται, θα πρέπει να ανανεώνονται δυναμικά: τα σχετικά checkboxes των προϊόντων, ο αριθμός των ποσοτήτων 
+        // των αντίστοιχων προϊόντων, και το συνολικό ποσό της παραγγελίας που θα βρίσκεται στο καλάθι.
+        //var laptops = ["AppleMacBookAir13", "HuaweiMateBookD15 ", "HP255G7", "AppleMacBookPro13", "AsusVivoBook", "DellInspiron"];
+        var laptops = ["checkOne1", "checkOne2 ", "checkOne3", "checkOne4", "checkOne5", "checkOne6"];
+        var quantities = ["quantity1", "quantity2", "quantity3", "quantity4", "quantity5","quantity6"];
+        // array 4 stores the prices of the products
+        var prices = [170,190,210,230,250,270];
+        var n = Math.floor(Math.random() * 6) + 1;
+        var result = getRandom(laptops, n);
+        // array 1 stores the checkboxes for the random products selected
+        var array1 = Array();
+        // array 2 stores the random quantities for the checkboxes selected
+        var array2 = Array();
+        // array 3 stores the quantity ids of the corresponding randomly selected products
+        var array3 = Array();
+        // array 4 stores the prices of the corresponding randomly selected products
+        var array4 = Array();
+
+        for (i = 0; i < result.length; i++) {
+            // select random product from 1 to 6
+            var product = Math.floor(Math.random() * 6);
+            var index = laptops.indexOf(laptops[product]);
+            array1[i] = laptops[product];
+            // select random quantity from 1 to 5
+            array2[i] = Math.floor(Math.random() * 5) + 1;
+            array3[i] = quantities[index];
+            array4[i] = prices[index];
+        }
+        var sum = 0;
+        for (i = 0; i < array1.length; i++) {
+            sum += ( parseInt(array4[i]) * parseInt(array2[i]) );
+            document.getElementById(array1[i]).checked = true;
+            // you can uncomment this optionally
+            //window.alert(array1[i]);
+            //window.alert(array3[i]);
+            document.getElementById(array3[i]).value = array2[i];
+        } 
+        document.getElementById("SubTotal").value = sum+2;
+
+        }
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+        function check()
+        {
+            if (document.getElementById("checkCourrierOpt").checked==true) {
+                courrierExp1();
+            }
+
+            if (document.getElementById("checkCourrierOpt").checked==false) {
+                courrierExp2();
+            } 
+        }
+
+        function courrierExp1() {
+        //Αν επιλεχθεί η express παράδοση, τότε το συνολικό κόστος θα αυξάνεται κατά 4€ (τα 2 ευρώ ούτως η άλλως χρειάζονται για την κανονική παράδοση), 
+        // ειδάλλως απλά τα έξοδα αποστολής θα ανέρχονται στα 2€ τα οποία τα προσθέτουμε αυτόματα.
+            var inputSubtotal =  document.getElementById("SubTotal");
+            var x = parseInt(inputSubtotal.value);
+            var result;
+
+            if (x > 0) {
+                result = x + 4;
+                x = result;
+            } 
+
+            // Ωστόσο, αν τα συνολικά έξοδα είναι πάνω από 30€ τότε η παράδοση θα είναι δωρεάν, όποτε αφαιρώ 4 και τα 2 ευρώ κόστος για την στάνταρ παράδοση           
+            if (x > 30) {
+                result = x - 6
+            }
+
+            var inputSubtotal = document.getElementById("SubTotal");
+            
+            inputSubtotal.value = result;   
+        }
+
+        function courrierExp2() {
+        // Αν από επιλεχθεί η express παράδοση, τότε το συνολικό κόστος θα μειώνεται κατά 4€ (τα 2 ευρώ ούτως η άλλως χρειάζονται για την κανονική παράδοση),
+            var inputSubtotal =  document.getElementById("SubTotal");
+            var x = parseInt(inputSubtotal.value);
+
+            if (x > 30) {
+                result = x + 2
+            } 
+            
+            if (x <= 30) {
+                var result = x - 4;
+            }
+
+            var inputSubtotal = document.getElementById("SubTotal");
+            x = result;
+            inputSubtotal.value = result;   
+        }
+
+    </script>
+
+    <form id="shopping-cart" method="post" class="shopping-cart1" onsubmit="return false" >
+        <div class="shopping-cartdiv" id="sub-total">
+            <label  for="shopping-cartdiv" <strong>Sub Total of Shopping Cart in $: </strong><span id="stotal"></span> </label>
+            <input type="number" id="SubTotal" name="SubTotal" size="1"  /> <br>
+            <input type="checkbox" id="checkCourrierOpt" name="checkCourrierOpt" value="check" onchange="check()">
+            <label for="checkCourrierOpt">Express Delivery* <br> *If Sub Total more than 30$, Express Delivery is Free</label><br><br />
+        </div>
+        <ul id="shopping-cart-actions">
+            <li> <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" onclick="updateWithRandom()" /> </li>
+            <li> <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onClick="window.location.reload();" /> </li>
+        </ul>
+    </form>
 
     <div class="form1" id="f1">
         <form method="post" action="#">
-            <div class="clearfix">
+            
+            <div class="clearfix" id="AppleMacBookAir13">
                 <img class="img2" src="photos/category1/eikona1.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>Apple MacBook Air 13" (i5/8GB/128GB/Retina) (2019)</h2>
                 <p>Ultrabook, 13.3" IPS Panel 2560x1600, CPU: Intel Core i5 1.6GHz, RAM: 8GB, 128GB SSD, GPU: Intel UHD Graphics 617, macOS</p><br /><br />
-
                 <input type="checkbox" id="checkOne1" name="checkone" value="check">
                 <label for="checkOne"> Added</label><br><br />
                 <div style="padding-left:10%;padding-bottom:5%">
@@ -199,7 +345,7 @@
                 <p class="near price">Price: 170 $</p>
             </div>
 
-            <div class="clearfix">
+            <div class="clearfix" id="HuaweiMateBookD15">
                 <img class="img2" src="photos/category1/eikona2.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>Huawei MateBook D 15 (R5-3500U/8GB/256GB/FHD/W10) Mystic Silver</h2>
                 <p>Ultrabook, 15.6" IPS Panel 1920x1080, CPU: AMD Ryzen 5 2.10GHz, RAM: 8GB, 256GB SSD, GPU: AMD Radeon Vega 8 Graphics, Windows 10</p><br /><br />
@@ -213,7 +359,7 @@
                 <p class="near price">Price: 190 $</p>
             </div>
 
-            <div class="clearfix">
+            <div class="clearfix" id="HP255G7">
                 <img class="img2" src="photos/category1/eikona3.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>HP 255 G7 (2200U/8GB/256GB/FHD/No OS)</h2>
                 <p>Notebook, 15.6" 1920x1080, CPU: AMD Ryzen 3 2.5GHz, RAM: 8GB, 256GB SSD, GPU: AMD Radeon Vega Graphics, No OS</p><br /><br />
@@ -227,7 +373,7 @@
                 <p class="near price">Price: 210 $</p>
             </div>
 
-            <div class="clearfix">
+            <div class="clearfix" id="AppleMacBookPro13">
                 <img class="img2" src="photos/category1/eikona4.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>Apple MacBook Pro 13.3" (i5-8257U/8GB/128GB) with Touch Ba</h2>
                 <p>Ultrabook, 13.3" IPS Panel 2560x1600, CPU: Intel Core i5 1.4GHz, RAM: 8GB, 128GB SSD, GPU: Intel Iris Plus Graphics 645, macOS</p><br /><br />
@@ -241,7 +387,7 @@
                 <p class="near price">Price: 230 $</p>
             </div>
 
-            <div class="clearfix">
+            <div class="clearfix" id="AsusVivoBook">
                 <img class="img2" src="photos/category1/eikona5.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>Asus VivoBook 15 X512DA-EJ466T (3700U/12GB/512GB/FHD/W10)</h2>
                 <p>Ultrabook, 15.6" 1920x1080, CPU: AMD Ryzen 7 RAM: 12GB, 512GB SSD, GPU: AMD Radeon RX Vega 10, Windows 10</p><br /><br />
@@ -255,12 +401,10 @@
                 <p class="near price">Price: 250 $</p>
             </div>
 
-            <div class="clearfix">
+            <div class="clearfix" id="DellInspiron">
                 <img class="img2" src="photos/category1/eikona6.jpeg" alt="Pineapple" width="170" height="170">
                 <h2>Dell Inspiron 3584 (i3-7020U/4GB/128GB/FHD/W10)</h2>
                 <p>Notebook, 15.6" 1920x1080, CPU: Intel Core i3 2.3GHz, RAM: 4GB, 128GB SSD, GPU: Intel HD Graphics 620, Windows 10</p><br /><br />
-
-
                 <input type="checkbox" id="checkOne6" name="checkone" value="check">
                 <label for="checkOne"> Added</label><br><br />
                 <div style="padding-left:10%;padding-bottom:5%">
@@ -269,6 +413,7 @@
                 </div>
                 <p class="near price">Price: 270 $</p>
             </div>
+
         </form>
         <input type="submit" value="Submit" onclick="myFunction()">
         <br /><br />
