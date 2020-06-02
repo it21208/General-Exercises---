@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -5,6 +6,7 @@
 	<title> Jewellery for you </title>
 	<link rel="stylesheet" type="text/css" href="mainpage.css">
 	
+	<!-- Get current date -->
 	<script type="text/javascript">
 	function showDate() {
 		var d = new Date();
@@ -14,9 +16,33 @@
 		document.write(curr_date + "-" + curr_month + "-" + curr_year);
 	}
 	</script>
+
+	<!-- Validate login form -->
+	<script src="jquery-1.X"></script>
+	<script type="text/javascript">
+		$(document).ready(function(e){
+			var username=$("#username").val();
+			var password=$("#pwd").val();
+			$("#login").click(function(){
+                            if(username=="" && password=="")
+                            {
+                                   alert("username or password is blank");
+                                   e.preventDefault();//prevent the form from submitting.
+                            }
+
+                     })
+
+              })
+       </script>
 </head>
 
 <body>
+       
+       <button type="button"
+              onclick="document.getElementById('demo').innerHTML = 2106427623">
+              Contact Us</button>
+       <p id="demo"></p>
+       
 	<header id="header1">
 		<p> Jewellery for you </p>
 	</header>
@@ -30,15 +56,22 @@
 	</div><br>
 	<br>
 	<a href="signup_page.html"> Signup </a><br>
-	<p class="general" style="text-align:left"> If you already have an account log in! </p><br>
-	
+	<p class="general" style="text-align:center">   If you already have an account log in! 	
 	<div>
-		<form>
-			<p><label for="username"> Username </label><input type="text"  name="username" required>
-			<p><label for="pwd"> Password </label><input type="password" name="pwd" required>			
+		<form name="loginForm" id="loginForm" method="post" action="Login.php">
+			<p><label for="username"> Username </label><input type="text"  name="username" id="username" required>
+			<p><label for="pwd"> Password </label><input type="password" name="pwd" id="pwd" required>
+			<!-- <input type="submit" name="login" id="login" value="Login" /> --> 	  		
 		</form>
 	</div>
 	<a href="categories_page.html"> Login </a>
+	
+	
+	<iframe width="280" height="315"
+	    src="https://www.youtube.com/embed/DjSK0P09BTo">
+       </iframe>
+       <iframe width="280" height="315"
+       src="https://www.youtube.com/embed/nnor956iQlA">
+       </iframe>
 </body>
-
 </html>

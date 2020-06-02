@@ -61,3 +61,28 @@ p {
 	position: relative;
 	right: 60px;
 }
+
+.content{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: darkgray;
+    padding: 20px;
+    width: 30%;
+}
+
+#display{
+    width: 100%;
+}
+
+#slider{
+    width: 100%;
+}
+
+#length{
+    display: inline-block;
+    width: 100px;
+}
+
+.previous_passwords{
+    margin-bottom: 20px;
+}

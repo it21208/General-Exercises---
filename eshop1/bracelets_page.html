@@ -17,6 +17,49 @@
 	
 <article>
 
+<form id="shopping-cart" method="post" class="shopping-cart1" onsubmit="return false" >
+        <div class="shopping-cartdiv" id="sub-total">
+            <label  for="shopping-cartdiv" <strong>Shopping Cart Total Cost in €: </strong><span id="stotal"></span> </label>
+            <input type="number" id="SubTotal" name="SubTotal" size="1"  /> <br>
+            <input type="checkbox" id="checkCourrierOpt" name="checkCourrierOpt" value="check" onchange="check()">
+            <label for="checkCourrierOpt">Express Delivery* <br> ☞ Express Delivery is Free if Total Cost is more than 30€</label><br><br />
+        </div>
+        <ul id="shopping-cart-actions">
+            <li> <input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" onclick="updateWithRandom()" /> </li>
+            <li> <input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onClick="window.location.reload();" /> </li>
+        </ul>
+</form>
+
+<script type="text/javascript" language="javascript">
+       function updateWithRandom() {
+              var products = ["product1", "product2 ", "product3", "product4", "product5", "product6", "product7", "product8"];
+              var quantities = ["quantity1", "quantity2", "quantity3", "quantity4", "quantity5","quantity6", "quantity7","quantity8"];
+              var prices = [75,115,65,65,75,150,100,160];
+              var n = Math.floor(Math.random() * 8) + 1;
+              var result = getRandom(products, n);
+              var array1 = Array();
+              var array2 = Array();
+              var array3 = Array();
+              var array4 = Array();
+              for (i = 0; i < result.length; i++) {
+                     var product = Math.floor(Math.random() * 8);
+                     var index = products.indexOf(products[product]);
+                     array1[i] = products[product];
+                     array2[i] = Math.floor(Math.random() * 5) + 1;
+                     array3[i] = quantities[index];
+                     array4[i] = prices[index];
+              }
+              var sum = 0;
+              for (i = 0; i < array1.length; i++) {
+                     sum += ( parseInt(array4[i]) * parseInt(array2[i]) );
+                     document.getElementById(array1[i]).checked = true;
+                     document.getElementById(array3[i]).value = array2[i];
+              } 
+              document.getElementById("SubTotal").value = sum+2;
+       }
+</script>
+
+
 <section> 
 	<form name="ShoppingList" class="form1" id="f1">
 		<fieldset>
@@ -53,7 +96,7 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product1">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
 						<input type="number" id="quantity1" name="quantity" min="1" max="5">
@@ -79,10 +122,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product2">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity2" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -105,10 +148,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product3">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity3" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -131,10 +174,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product4">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity4" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -159,10 +202,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product5">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity5" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -185,10 +228,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product6">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity6" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -211,10 +254,10 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product7">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity7" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
@@ -237,19 +280,19 @@
 							</td>
 						</tr>
 					</table>
-					<input type="checkbox" id="check">
+					<input type="checkbox" id="product8">
 					<div style="padding-left:10%;padding-bottom:5%">
 						<label for="quantity">Quantity (from 1 to 5):</label>
-						<input type="number" id="quantity1" name="quantity" min="1" max="5">
+						<input type="number" id="quantity8" name="quantity" min="1" max="5">
                 	</div>
 				</div>
 			</td>
 		</tr>
 		
 	</table>	
-</section>
+<!-- /section> -->
 
-</article>
+<!-- /article> -->
 
 <p><left>
 <button type="button" style="background-color:orange; border-color:black;" >Make Random Order</button>
@@ -273,7 +316,7 @@
 		<table>
 			<tr>
 				<td>
-					<p><label for="e-Mail"> E-Mail* </label><br><input type="email" name="E-Mail" required></p>
+					<p><label for="e-Mail"> E-Mail* </label><br><input type="email" name="E-Mail" placeholder="e.g address@yahoo.com" required></p>
 				</td>
 				<td>
 					<p><label for="firstname"> First Name* </label><br><input type="text" name="First Name" required></p>
@@ -284,13 +327,13 @@
 			</tr>
 			<tr>
 				<td>
-					<p><label for="address"> Address*  </label><br><input type="text" name="Address" onkeyup="only_letters(this)" required></p>
+					<p><label for="address"> Address*  </label><br><input type="text" name="Address" placeholder="Your address.." onkeyup="only_letters(this)" required></p>
 				</td>
 				<td>
 					<p><label for="addressNo"> Address Number*  </label><br><input type="text" name="AddressNo" onkeyup="only_numbers(this)" required></p>
 				</td>
 				<td>
-					<p><label for="postcode"> Postcode* </label><br><input type="text" name="Postcode" required>
+					<p><label for="postcode"> Postcode* </label><br><input type="text" name="Postcode" placeholder="e.g. 12150" onkeyup="checkInput(this)" pattern=".{5,5}" maxlength="5" required>
 				</td>
 			</tr>
 			<tr>
@@ -320,39 +363,84 @@
 <br><br>
 <a href="categories_page.html"> Back to Categories Page </a>
 
+<script>
+function dropdownFunction() {
+       document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+       if (!event.target.matches('.dropbtn')) {
+         var dropdowns = document.getElementsByClassName("dropdown-content");
+         var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                   }
+                }
+       }
+} 
+</script>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+      $("#myDropdown").change(function () {
+          if ($(this).val() == 1) {
+              $("#cardnum").removeAttr("disabled");
+              $("#cardnum").focus();
+              $("#cardholdername").removeAttr("disabled");
+              $("#cardholdername").focus();
+              $("#cardexpiredate").removeAttr("disabled");
+              $("#cardexpiredate").focus();
+              $("#CVC").removeAttr("disabled");
+              $("#CVC").focus();
+          } else {
+              $("#cardnum").attr("disabled", "disabled");
+              $("#cardholdername").attr("disabled", "disabled");
+              $("#cardexpiredate").attr("disabled", "disabled");
+              $("#CVC").attr("disabled", "disabled");
+          }
+      });
+  });
+</script> 
+
 <br><br>
+<br><br>
+
+<div class="dropdown">   
+       <button onclick="dropdownFunction()" class="dropbtn">Select payment option</button>
+       <select id="myDropdown" class="dropdown-content"> 
+              <option value = "1" >Card</option>
+              <option value = "2" >Pay on Delivery</option>
+       </select>
+</div>
+
 <form class="formLast" id="fLast"> 
   <fieldset>
 	<legend> Fill in the payment information </legend>
 		<table>
 			<tr>
 				<td>
-					<input type="checkbox" name="delivery" value="delivery">
-					<label for="delivery"> Pay on Delivery </label><br>
+					<p><label for="cardnum"> Card number* </label><br>
+					<input type="number" id="cardnum" name="cardnum" style="width: 25em" placeholder="The code of your card" disabled="disabled" required><br>
+				</td>
+				<td>
+					<p><label for="expire"> Expire date* </label><br>
+					<input type="date" id="cardexpiredate" name="cardexpiredate" disabled="disabled" required>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<input type="checkbox" name="credit" value="credit">
-					<label for="credit"> Use Credit Card </label><br>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p><label for="cardnum"> Card number* </label><br><input type="text"  name="cardnum" required><br>
+					<p><label for="cvc"> CVC / CVV* </label><br>
+					<input type="text" name="CVC" id="CVC" placeholder="CVC" disabled="disabled" pattern=".{3,3}" maxlength="3" onkeyup="checkInput(this)" required>
 				</td>
 				<td>
-					<p><label for="expire"> Expire date* </label><br><input type="text" name="expire" required>
+					<p><label for="Cardholder name"> Cardholder name* </label><br>
+					<input type="text" id="cardholdername" name="cardholdername" placeholder="The name on your card" disabled="disabled" onkeyup="only_letters(this)" required>
 				</td>
-			</tr>
-			<tr>
-				<td>
-					<p><label for="cvc"> CVC / CVV* </label><br><input type="text" name="CVC" required>
-				</td>
-				<td>
-					<p><label for="Cardholder name"> Cardholder name* </label><br><input type="text" name="cardholder name" required>
-				</td>
-			</tr>
+			</tr>	
 		</table>
 	</fieldset>
 
@@ -379,6 +467,10 @@ function topFunction() {
 	document.documentElement.scrollTop = 0;
 }
 </script>
+
+</section> 
+
+</article> 
 
 </body>
 

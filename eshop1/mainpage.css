@@ -76,4 +76,10 @@ div {
 	width: 140px;
 }
 
+p {
+       color: gold;
+}
 
+button {
+       background-color: gold;
+}

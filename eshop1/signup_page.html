@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<title> Jewellery for you </title>
 	<link rel="stylesheet" type="text/css" href="signup_page.css">
+	<meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 
 <body>
 	<br>
 	<a href="mainpage.html"> Back to Home Page </a>
-
 	<p><center><h3> Please fill in this form to create an account! </h3></center></p>
-
-	<div>
-	<img align="right" id="watch" alt="watch" src="./photos/patroll.jpg")/>
-		<form>
-			<p><label for="firstname"> First Name </label><input type="text" name="First Name" required></p>
-			<p><label for="lastname"> Last Name </label><input type="text" name="Last Name" required></p>
-			<p><label for="birthday"> Birthday  </label><input type="text" name="Date of birth" required></p>
-			<p><label for="username"> Username </label><input type="text"  name="username" required><br>
-			<p><label for="pwd"> Password </label><input type="password" name="pwd" required><br><br><br>
-			<a href="mainpage.html"> Create Account </a>
-		</form>
-	</div>
-
+       <div>
+       <img align="right" id="watch" alt="watch" src="./photos/patroll.jpg")/>
+              <form name="signupForm" id="signupForm" method="post" action="signup.php">
+	              <p><label for="firstname"> First Name </label><input type="text" name="First Name" required></p>
+	              <p><label for="lastname"> Last Name </label><input type="text" name="Last Name" required></p>
+	              <p><label for="birthday"> Birthday  </label><input type="text" name="Date of birth" required></p>
+	              <p><label for="username"> Username </label><input type="text"  name="username" required><br>
+	              <p><label for="pwd"> Password </label><input type="password" name="pwd" required><br><br><br>
+	              <a href="mainpage.html"> Create Account </a>
+              </form>	
+       </div>
+       <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="content">
+                    <h4>Random Password Generator</h4>
+                    <br />
+                    <input type="text" id="display">
+                    <br />
+                    <input type="range" min="4" max="12" name="slider" id="slider">
+                    <br />
+                    <button onclick="generate()">Generate</button>
+                    <button onclick="copyPassword()">Copy to Clipboard</button>
+                    <div id="length"></div>
+                </div>
+                <div class="previous_passwords">
+                    <b>Previously Generated Passwords</b>
+                    <br />
+                    <div id="lastNums"></div>
+                </div>
+            </div>
+        </div>
+       </div>
+    <script src="myscript.js"></script>
 </body>
-
 </html>
