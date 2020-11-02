@@ -1,1 +1,1 @@
-# idiaitera mathimata limenes askiseis
+# General exercises and solutions for private lessons.
