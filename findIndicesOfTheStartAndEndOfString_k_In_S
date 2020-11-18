@@ -4,7 +4,7 @@ S = input()
 k = input()
 
 anymatch = False
-for m in re.finditer(r'(?=('+k+'))',S):
+for m in re.finditer(r'(?=('+k+'))',S):  # noted
     anymatch = True
     print((m.start(1),m.end(1)-1))
 if not anymatch:
