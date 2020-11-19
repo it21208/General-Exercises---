@@ -15,3 +15,22 @@ BEGIN
     PRINT REPLICATE(' * ',@iteration) 
     SET @iteration = @iteration - 1
 END
+
+/*
+P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+Write a query to print the pattern P(20).
+*/
+
+DECLARE @iteration INT = 1
+WHILE(@iteration<=20)
+BEGIN
+    PRINT REPLICATE(' * ',@iteration) 
+    SET @iteration = @iteration + 1
+END
+
