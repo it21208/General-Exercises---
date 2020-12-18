@@ -36,3 +36,29 @@ class MyHTMLParser(HTMLParser):
             
 MyParser = MyHTMLParser()
 MyParser.feed(''.join([input().strip() for _ in range(int(input()))]))
+
+''' ========= Also a slightly different version of the above with an alternative output for a different challenge ======= '''
+from html.parser import HTMLParser
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+N = int(input())
+htmlStr = ""
+for i in range(N):
+    htmlStr += input().strip()
+    
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):        
+        print (tag)
+        for ele in attrs:
+            print ('->',ele[0],'>',ele[1])
+           
+    # def handle_endtag(self, tag):
+    #     print (tag)
+        
+    def handle_startendtag(self, tag, attrs):
+        print (tag)
+        for ele in attrs:
+            print ('->',ele[0],'>',ele[1])
+    
+MyParser = MyHTMLParser()
+MyParser.feed(htmlStr)
