@@ -3,7 +3,8 @@ A valid postal code  have to fullfil both below requirements:
 
  must be a number in the range from 100000 to 999999 inclusive.
  must not contain more than ONE alternating repetitive digit pair.
-Alternating repetitive digits are digits which repeat immediately after the next digit. In other words, an alternating repetitive digit pair is formed by two equal digits that have just a single digit between them.
+Alternating repetitive digits are digits which repeat immediately after the next digit. In other words, 
+an alternating repetitive digit pair is formed by two equal digits that have just a single digit between them.
 
 For example:
 
