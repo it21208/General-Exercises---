@@ -48,3 +48,11 @@ Your task is to modify those symbols to the following:
 
 Both && and || should have a space " " on both sides.
 '''
+
+import re
+text = ""
+for i in range(int(input())):
+    text += input()+'\n'
+text = re.sub(" && ", " and ", text) 
+text = re.sub(" && ", " and ", text)
+print(text.replace(" || ", " or "))
