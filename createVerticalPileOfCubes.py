@@ -25,3 +25,13 @@ Print "Yes" if it is possible to stack the cubes. Otherwise, print "No". Do not 
 # Sample Output:
 # Yes
 # No
+
+for t in range(int(input())):
+    input()
+    lst = [int(x) for x in input().split()]
+    i = 0
+    while (i < len(lst) - 1 and lst[i] >= lst[i+1]):
+        i += 1
+    while (i < len(lst) - 1 and lst[i] <= lst[i+1]):
+        i += 1
+    print("Yes" if i == len(lst) - 1 else "No")
