@@ -15,3 +15,23 @@ Note: A 0 score will be awarded for using 'if' conditions in your code.
 Output Format:
 Print the decoded matrix script.
 '''
+import math
+import os
+import random
+import re
+import sys
+
+first_multiple_input = input().rstrip().split()
+n = int(first_multiple_input[0])
+m = int(first_multiple_input[1])
+matrix = []
+lstOfcols = [[] for _ in range(m)]
+
+a, b = [], ""
+for _ in range(n):
+    a.append(input())
+
+for z in zip(*a):
+    b += "".join(z)
+    
+print(re.sub(r"(?<=\w)([^\w]+)(?=\w)", " ", b))
