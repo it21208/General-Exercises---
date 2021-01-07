@@ -4,15 +4,14 @@ To decode the script, Neo needs to read each column and select only the alphanum
 reading from the leftmost column. If there are symbols or spaces between two alphanumeric characters of the decoded script, then Neo replaces them with a single 
 space '' for better readability. Neo feels that there is no need to use 'if' conditions for decoding. Alphanumeric characters consist of: [A-Z, a-z, and 0-9].
 
-Input Format
-
+Input Format:
 The first line contains space-separated integers N (rows) and M (columns) respectively.
 The next N lines contain the row elements of the matrix script.
 
-Constraints
+Constraints:
 0 < N, M < 100
 Note: A 0 score will be awarded for using 'if' conditions in your code.
 
-Output Format
+Output Format:
 Print the decoded matrix script.
 '''
