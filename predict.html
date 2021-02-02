@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Πρόβλεψη Ηλικίας</h1>
+      <img src="{{ url_for('static', filename='img/uploads/'+filename) }}" width="300" height="300">
+      <p><span style="color:maroon">{{yhat}}</span></p>   
+    </div>
+  </div>
+</div>
+{% endblock %}
